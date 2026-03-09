@@ -27,7 +27,9 @@ public class FindPivotIndex {
         return left==right;
     }*/
 
-    //
+    // Optimal time complexity : O(N)
+    // Space complexity :O(N).
+    /*
     public int pivotIndex(int[]nums){
         int[] prefixSum=new int[nums.length];
         prefixSum[0]=nums[0];
@@ -47,11 +49,27 @@ public class FindPivotIndex {
 
         }
         return -1;
+    }*/
+    public int pivotIndex(int[]nums){
+        for(int index=1;index<nums.length;index++){
+            nums[index]=nums[index-1] + nums[index];
+//            System.out.println(index+" th Step: "+Arrays.toString(nums));
+        }
+//        System.out.println(Arrays.toString(nums));
+        //find the pivot
+        for(int index=0;index<nums.length;index++){
+            int leftSum=(index==0)?0:nums[index-1];
+            int rightSum=nums[nums.length-1]-nums[index];
+            if(leftSum==rightSum){
+                return index;
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] a) {
         FindPivotIndex obj=new FindPivotIndex();
-        int[]arr={-1,-1,0,1,1,0};
+        int[]arr={1,7,3,6,5,6};
         System.out.println(obj.pivotIndex(arr));
 
     }
