@@ -1,8 +1,10 @@
 import java.util.Arrays;
 
 public class FindPivotIndex {
+
+    //Brute force & time complexity:O(N^2)
     /*
-    Brute force & time complexity:O(N^2)
+
     public int pivotIndex(int[] nums) {
 
         for(int index=0;index<nums.length;index++){
@@ -50,6 +52,10 @@ public class FindPivotIndex {
         }
         return -1;
     }*/
+
+    // optimal time and space complexity :
+    // time complexity : O(N);
+    // space complexity :O(1).
     public int pivotIndex(int[]nums){
         for(int index=1;index<nums.length;index++){
             nums[index]=nums[index-1] + nums[index];
