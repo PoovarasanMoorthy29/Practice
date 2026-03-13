@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class GreaterElementOnRight {
     public int[] replaceElements(int[] arr) {
         // Brute force & Time complexity : O(N^2)
-        int[] rightElementGreaterArr=new int[arr.length];
+//        int[] rightElementGreaterArr=new int[arr.length];
         for(int index=0;index<arr.length-1;index++){
             int maxEle=arr[index+1];
             for(int idx=index+1;idx<arr.length;idx++){
@@ -10,10 +10,10 @@ public class GreaterElementOnRight {
                     maxEle=arr[idx];
                 }
             }
-            rightElementGreaterArr[index]=maxEle;
+            arr[index]=maxEle;
         }
-        rightElementGreaterArr[arr.length-1]=-1;
-        return rightElementGreaterArr;
+        arr[arr.length-1]=-1;
+        return arr;
     }
 
     static void main() {
