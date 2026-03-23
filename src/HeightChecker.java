@@ -16,7 +16,7 @@ public class HeightChecker {
 
     }
 
-    static void main(String [] args) {
+    public static void main(String[] args) {
         int[] heights={1,1,4,2,1,3};
         HeightChecker obj=new HeightChecker();
         System.out.println(obj.checkHeight(heights));

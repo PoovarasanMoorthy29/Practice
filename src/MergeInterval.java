@@ -25,7 +25,7 @@ public class MergeInterval {
         return result.toArray(new int[result.size()][]);
     }
 
-    static void main() {
+    public static void main(String[] args) {
         int[][] arr={{1,3},{2,6},{8,10},{15,18}};
         MergeInterval obj =new MergeInterval();
         System.out.println(Arrays.deepToString(obj.merge(arr)));
