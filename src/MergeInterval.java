@@ -5,20 +5,19 @@ import java.util.List;
 
 public class MergeInterval {
     public int[][] merge(int[][] intervals) {
-        if(intervals.length<=1){
+        if (intervals.length <= 1) {
             return intervals;
         }
-        Arrays.sort(intervals, Comparator.comparingInt(i ->i[0]));
-        List<int[]> result=new ArrayList<>();
-        int[] newInterval=intervals[0];
+        Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
+        List<int[]> result = new ArrayList<>();
+        int[] newInterval = intervals[0];
         result.add(newInterval);
-        for(int [] interval:intervals){
-            if(interval[0]<=newInterval[1]){
-                newInterval[1]=Math.max(newInterval[1],interval[1]);
+        for (int[] interval : intervals) {
+            if (interval[0] <= newInterval[1]) {
+                newInterval[1] = Math.max(newInterval[1], interval[1]);
 
-            }
-            else{
-                newInterval=interval;
+            } else {
+                newInterval = interval;
                 result.add(newInterval);
             }
         }
@@ -26,8 +25,8 @@ public class MergeInterval {
     }
 
     static void main() {
-        int[][] arr={{1,3},{2,6},{8,10},{15,18}};
-        MergeInterval obj =new MergeInterval();
+        int[][] arr = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        MergeInterval obj = new MergeInterval();
         System.out.println(Arrays.deepToString(obj.merge(arr)));
     }
 }
