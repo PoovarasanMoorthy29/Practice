@@ -14,7 +14,6 @@ public class MinimumCommonValue {
             else {
                 right++;
             }
-
         }
         return -1;
 
