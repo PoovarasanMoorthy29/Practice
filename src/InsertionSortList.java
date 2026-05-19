@@ -1,6 +1,5 @@
 package src;
 
-import java.util.LinkedList;
 
 public class InsertionSortList {
     public ListNode insertionSortList(ListNode head) {
