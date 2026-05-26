@@ -17,6 +17,7 @@ public class NumberOfSpecialCharacter {
                 count++;
             }
         }
+
         return count;
     }
 }
