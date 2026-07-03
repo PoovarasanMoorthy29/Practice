@@ -11,18 +11,18 @@ public class MergeStringAlternatively {
     private String mergeString(String word1,String word2){
         int left=0;
         int right=0;
-        String result="";
+        StringBuilder result= new StringBuilder();
         while(left<word1.length() || right<word2.length()){
             if(left==word1.length()){
-                result+=""+word2.charAt(right++);
+                result.append(word2.charAt(right++));
             }
             else if(right==word2.length()){
-                result+=""+word1.charAt(left++);
+                result.append(word1.charAt(left++));
             }
             else{
-                result+=""+word1.charAt(left++)+word2.charAt(right++);
+                result.append(word1.charAt(left++)).append(word2.charAt(right++));
             }
         }
-        return result;
+        return result.toString();
     }
 }
