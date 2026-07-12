@@ -30,7 +30,6 @@ public class LongestWordInString {
         return result.toString();
 
     }
-
     public static void main(String[] args) {
         LongestWordInString obj = new LongestWordInString();
         String str = "i love tennis";
