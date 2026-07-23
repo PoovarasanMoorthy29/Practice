@@ -13,6 +13,7 @@ public class StarPatternI {
             }
             temp += i;
             System.out.println();
+
         }
     }
 }
